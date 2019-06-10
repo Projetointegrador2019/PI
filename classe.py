@@ -1,5 +1,17 @@
+from peewee import *
+
 class Pessoa():
-    def __init__(self, nome, telefone, tipo_sanguineo):
-        self.nome=nome
-        self.telefone=telefone
-        self.tipo_sanguineo = tipo_sanguineo
+    nome= CharField()
+    idade= CharField()
+    tipo_sanguineo =CharField()
+    email =CharField()
+    login=CharField()
+    senha=CharField()
+    CPF=CharField()
+    data_nasc=CharField()
+    peso=CharField()
+    altura=CharField()
+
+class PerguntasDoDoador():
+	ferida=CharField()
+	alimento=CharField()

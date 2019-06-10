@@ -87,4 +87,12 @@ def login():
 def logout():
     session.pop("usuario")
 
+@app.route("/dados_pessoais")
+def dados_pessoais():
+    return render_template("questionario.html")
+
+@app.route("/perguntas")
+def perguntas():
+    pass
+
 app.run(debug=True)
