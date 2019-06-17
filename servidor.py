@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
-from classe import Pessoa
+from classe import * 
+from peewee import *
 
 app= Flask(__name__)
 
@@ -11,23 +12,50 @@ def iniciar():
     return render_template ("index.html")
 
 @app.route("/listar_pessoas")
-def listar_pessoas():
-    return render_template("listar_pessoas.html", lista = lista)
+def listar_pessoas(): 
+    return render_template("perfil.html", lista = Pessoa.select())
 
 @app.route("/form_inserir_pessoas")
 def form_inserir_pessoas():
-    return render_template("inserir_pessoas.html")
+    return render_template("questionario.html")
 
-@app.route("/inserir_pessoas")
+@app.route("/inserir", methods=["POST"])
 def inserir_pessoas():
-    nome=request.args.get("nome")
-    telefone=request.args.get("telefone")
-    tipo_sanguineo=request.args.get("tipo_sanguineo")
-    pessoa = Pessoa(nome,telefone,tipo_sanguineo)
-    lista.append(pessoa)
+    Pessoa.create(nome=request.form["nome_completo"], 
+    idade=request.form["idade"], 
+    tipo_sanguineo=request.form["tipo_sanguineo"], 
+    email=request.form["email"],
+    login=request.form["login"], 
+    senha=request.form["senha"], 
+    CPF=request.form["cpf"],
+    data_nasc=request.form["data_nasc"], 
+    peso=request.form["peso"],
+    altura=request.form["altura"], 
+    ferida = request.form ["ferida"], 
+    alimento=request.form ["alimento"], 
+    bebidas=request.form ["bebidas"],
+    parceiros=request.form ["parceiros"], 
+    repouso=request.form ["repouso"],
+    droga=request.form ["droga"],
+    gravidez=request.form ["gravidez"] ,
+    dente=request.form  ["dente"], 
+    transfusao=request.form  ["transfusao"],
+    tatuagens=request.form ["tatuagens"], 
+    gripe=request.form ["gripe"], 
+    intestino=request.form ["intestino"], 
+    parto=request.form ["parto"] ,
+    cirurgia=request.form ["cirurgia"],
+    vacina=request.form ["vacina"], 
+    convulsao=request.form ["convulsao"], 
+    medicamento=request.form ["medicamento"],
+    doenca=request.form ["doenca"])
+
+
+
     return redirect ("/")
 
-@app.route("/excluir_pessoa")
+
+@app.route("/excluir_pessoa", methods=["POST"])
 def excluir_pessoa():
     excluir=None
     nome=request.args.get("nome")
@@ -53,11 +81,35 @@ def form_alterar_pessoa():
 
 @app.route("/alterar_pessoa")
 def alterar_pessoa():
-    nome=request.args.get("nome")
-    telefone=request.args.get("telefone")
-    tipo_sanguineo=request.args.get("tipo_sanguineo")
-    nome_original=request.args.get("nome_original")
-
+    nome=request.form["nome"]
+    idade= request.form["idade"]
+    tipo_sanguineo = request.form["tipo_sanguineo"]
+    email = request.form["email"]
+    login= request.form["login"]
+    senha= request.form["senha"]
+    CPF= request.form["cpf"]
+    data_nasc= request.form ["data_nasc"]
+    peso = request.form ["peso"]
+    altura = request.form ["altura"]
+    ferida = request.form ["ferida"]
+    alimento=request.form ["alimento"]
+    bebidas=request.form ["bebidas"]
+    parceiros=request.form ["parceiros"]
+    repouso=request.form ["repouso"]
+    droga=request.form ["droga"]
+    gravidez=request.form ["gravidez"]
+    dente=request.form  ["dente"]
+    transfusao=request.form  ["transfusao"]
+    tatuagens=request.form ["tatuagens"]
+    gripe=request.form ["gripe"]
+    intestino=request.form ["intestino"]
+    parto=request.form ["parto"]
+    cirurgia=request.form ["cirurgia"]
+    vacina=request.form ["vacina"]
+    convulsao=request.form ["convulsao"]
+    medicamento=request.form ["medicamento"]
+    doenca=request.form ["doenca"]
+    
     indice= -2
     for i in range(len(lista)):
         if lista[i].nome==nome_original:

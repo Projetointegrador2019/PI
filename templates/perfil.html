@@ -8,7 +8,7 @@
 <form action="listar_pessoas"></form>
 <h1>Lista de Doadores Aptos</h1>
 <br>
-{{for pessoa in lista:}}
+{%for pessoa in lista:%}
    Nome: {{pessoa.nome}}<br>
    Data de nascimento: {{pessoa.data_nasc}}<br>
    Idade: {{pessoa.idade}}<br>
@@ -18,6 +18,8 @@
    CPF: {{pessoa.cpf}}<br>
    Login: {{pessoa.login}}<br>
    <hr>
+{%endfor%}
+  
 
 
 

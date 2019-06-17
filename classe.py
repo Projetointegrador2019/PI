@@ -1,6 +1,17 @@
 from peewee import *
 
-class Pessoa():
+
+
+db=SqliteDatabase("doacao_sangue2.db")
+
+
+class Modelo(Model):
+    class Meta:
+        database=db
+
+
+
+class Pessoa(Modelo):
     nome= CharField()
     idade= CharField()
     tipo_sanguineo =CharField()
@@ -12,23 +23,25 @@ class Pessoa():
     peso=CharField()
     altura=CharField()
 
-class PerguntasDoDoador():
-	ferida=BooleanField()
-	alimento=BooleanField()
-    bebidas=BooleanField()
-    parceiros=BooleanField()
-    repouso=BooleanField()
-    droga=BooleanField()
-    gravidez=BooleanField()
-    dente=BooleanField() 
-    transfusao=BooleanField() 
-    tatuagens=BooleanField()
-    gripe=BooleanField()
-    intestino=BooleanField()
-    parto=BooleanField()
-    cirurgia=BooleanField()
-    vacina=BooleanField()
-    convulsao=BooleanField()
-    medicamento=BooleanField()
-    doenca=BooleanField()
+    ferida = CharField()
+    alimento = CharField()
+    bebidas = CharField()
+    parceiros = CharField()
+    repouso = CharField()
+    droga = CharField()
+    gravidez = CharField()
+    dente = CharField() 
+    transfusao = CharField() 
+    tatuagens = CharField()
+    gripe = CharField()
+    intestino = CharField()
+    parto = CharField()
+    cirurgia = CharField()
+    vacina = CharField()
+    convulsao = CharField()
+    medicamento = CharField()
+    doenca = CharField()
 
+
+db.connect()
+db.create_tables([Pessoa])
