@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Perfil</title>
+</head>
+<body>
+<form action="listar_pessoas"></form>
+<h1>Lista de Doadores Aptos</h1>
+<br>
+{%for pessoa in lista:%}
+   Nome: {{pessoa.nome}}<br>
+   Data de nascimento: {{pessoa.data_nasc}}<br>
+   Idade: {{pessoa.idade}}<br>
+   Tipo Sanguíneo: {{pessoa.tipo_sanguineo}}<br>
+   Peso: {{pessoa.peso}}<br>
+   Altura: {{pessoa.altura}}<br>
+   CPF: {{pessoa.cpf}}<br>
+   Login: {{pessoa.login}}<br>
+   <hr>
+   <br>
+   <a href="/excluir_pessoa?id={{pessoa.id}}">Excluir</a>
+   <a href="/form_alterar_pessoa?id={{pessoa.id}}">Alterar</a>
+   
+   <hr>
+
+{%endfor%}
+  
+
+
+
+
+</body>
+</html>

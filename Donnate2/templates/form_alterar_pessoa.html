@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario de Edicao de Dados</title>
+        <style>
+            body{background-color: antiquewhite;}
+            h1{text-align: center;}    
+        </style>
+    </head>
+    <body>
+        <h1>Formulario de Edição de Dados!</h1>
+        <br>
+        <hr>
+        <form action="/alterar_pessoa" method="POST">
+        
+            
+            
+
+            <h2>Dados Pessoais </h2>
+							Nome: <input type="text" name="nome_completo" placeholder="Nome Completo" value="{{pessoa.nome}}">
+							<br>
+							Idade: <input type="text" name="idade" placeholder="00" value="{{pessoa.idade}}">
+							<br>
+							CPF: <input type="text" name="cpf" placeholder="123.456.789-10" value="{{pessoa.cpf}}"> 
+							<br>
+							Data de Nascimento: <input type="text" name="data_nasc" placeholder="00/00/0000" value="{{pessoa.data_nasc}}">
+							<br>
+							Peso: <input type="text" name="peso" placeholder="00" value="{{pessoa.peso}}">
+							<br>
+							Altura: <input type="text" name="altura" placeholder="0.00" value="{{pessoa.altura}}">
+							<br>
+							Tipo Sanguíneo: <input type="text" name="tipo_sanguineo" placeholder="AB+" value="{{pessoa.tipo_sanguineo}}">
+							<br>
+			                Login:<input type="text" name="login" placeholder="Login" value="{{pessoa.login}}">
+			                <br>
+                            Senha:<input type="text" name="senha" value="{{pessoa.senha}}">
+                            
+
+                            <input type="hidden" name=id_original value="{{pessoa.id}}">
+                            <input type=submit value=alterar>
+
+                    <!--
+
+                        <p>1.Você possui algum machucado ou ferida no corpo?</p>
+                        <input type="radio" name="ferida" value="sim" required > Sim<br>
+                        <input type="radio" name="ferida" value="nao"> Não<br>
+
+                        <p>2. Você comeu algum alimento nas 4 horas que antecedem o exame? Se sim comeu algum alimento gorduroso ou relacionado a esses gêneros</p>
+                            <input type="radio" name="alimento" value="sim" required> Sim<br>
+                            <input type="radio" name="alimento" value="nao"> Não<br>
+
+                        <p>3. Você ingeriu bebidas alcoólicas nas 12 horas que antecedem o exame?</p>
+                            <input type="radio" name="bebidas" value="sim" required> Sim<br>
+                            <input type="radio" name="bebidas" value="nao"> Não<br>
+
+                        <p>4. Você possuiu mais de um parceiro sexual nos 12 meses que antecedem o exame?</p>
+                            <input type="radio" name="parceiros" value="sim" required> Sim<br>
+                            <input type="radio" name="parceiros" value="nao"> Não<br>
+
+                        <p>5. Você repousou bem na noite que antecedeu o exame?</p>
+                            <input type="radio" name="repouso" value="sim" required> Sim<br>
+                            <input type="radio" name="repouso" value="nao"> Não<br>
+
+                        <p>6. Você usou algum tipo de droga ilícita nos últimos 12 meses que antecedem o
+                        exame?</p>
+                            <input type="radio" name="droga" value="sim" required> Sim<br>
+                            <input type="radio" name="droga" value="nao"> Não<br>
+
+                        <p>7. Você é gestante ou ainda está no período de amamentação, tendo bebês menores
+                        que 12 meses?</p>
+                            <input type="radio" name="gravidez" value="sim" required> Sim<br>
+                            <input type="radio" name="gravidez" value="nao"> Não<br>
+
+                        <p>8. Você fez algum procedimento dentário nos últimos 30 dias? Especifique qual.</p>
+                            <input type="radio" name="dente" value="sim" required> Sim<br>
+                            <input type="radio" name="dente" value="nao"> Não<br>
+
+                        <p>9. Você recebeu alguma transfusão de sangue de pacientes que receberam sangue ou
+                        que fazem hemodiálise no período de 1 ano?</p>
+                            <input type="radio" name="transfusao" value="sim" required> Sim<br>
+                            <input type="radio" name="transfusao" value="nao"> Não<br>
+
+                        <p>10. Você fez tatuagens, maquiagem definitiva, piercing ou micro pigmentação, no
+                        período de 1 ano que antecede o exame?</p>
+                            <input type="radio" name="tatuagens" value="sim" required> Sim<br>
+                            <input type="radio" name="tatuagens" value="nao"> Não<br>
+
+                        <p>11. Você possui algum sintoma de gripe (tosse, dor de garganta, febre)?</p>
+                            <input type="radio" name="gripe" value="sim" required> Sim<br>
+                            <input type="radio" name="gripe" value="nao"> Não<br>
+
+                        <p>12. Você passou por problemas intestinais, como diarreias nos 7 dias que antecedem o
+                        exame?</p>
+                            <input type="radio" name="intestino" value="sim" required> Sim<br>
+                            <input type="radio" name="intestino" value="nao"> Não<br>
+
+                        <p>13. Você realizou parto normal ou aborto nos últimos 3 meses que antecedem o
+                        exame?</p>
+                            <input type="radio" name="parto" value="sim" required> Sim<br>
+                            <input type="radio" name="parto" value="nao"> Não<br>
+
+                        <p>14. Você passou por alguma cirurgia nos 12 meses que antecedem o exame?</p>
+                            <input type="radio" name="cirurgia" value="sim" required> Sim<br>
+                            <input type="radio" name="cirurgia" value="nao"> Não<br>	
+
+                        <p>15. Você tomou alguma vacina nas últimas 4 semanas que antecedem o exame?</p>
+                            <input type="radio" name="vacina" value="sim" required> Sim<br>
+                            <input type="radio" name="vacina" value="nao"> Não<br>
+
+                        <p>16. Você teve uma convulsão os últimos 3 meses?</p>
+                            <input type="radio" name="convulsao" value="sim" required> Sim<br>
+                            <input type="radio" name="convulsao" value="nao"> Não<br>
+
+                        <p>17. Você está ingerindo algum medicamento?</p>
+                            <input type="radio" name="medicamento" value="sim" required> Sim<br>
+                            <input type="radio" name="medicamento" value="nao"> Não<br>
+
+                        <p>18. Você é portador de alguma doença? 
+                            (Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto)
+                        </p>
+                            <input type="radio" name="doenca" value="sim" required> Sim<br>
+                            <input type="radio" name="doenca" value="nao"> Não<br>
+                 
+                        -->
+			<br> 
+        </form>
+        <hr>
+    </body>
+</html>
