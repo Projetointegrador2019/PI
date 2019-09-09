@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Perfil</title>
+    
+<style> 
+
+body {
+			background-color: #eeeeee;
+			width: 100%;
+		}
+
+		.posicao_imagem {
+			position: absolute;
+			top:  -28%;
+			left: -9%;
+		}
+
+		
+		.menu {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  margin: 0 auto;
+		  height: 100px;
+		  list-style: none;
+		}
+
+		.menu li {
+		  width: 125px;
+		  height: 50px;
+		  text-align: right;
+		  float: right;
+		  left:-15px;
+		 }
+
+
+
+</style>
+</head>
+<body>
+
+   
+
+        <ul class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/form_inserir_pessoas">Cadastre-se</a></li>
+                {% if session ["usuario"] %}
+                <li><a href="/abrir_perfil">Perfil</a></li>
+                {% endif %}
+                {% if session ["usuario"] %}
+                <li><a href=/logout>Sair</a></li>
+                {% else %}
+                <li><a href=/form_login>Fazer login</a></li>
+                 {% endif %}
+            </ul>
+    
+            {% for i in lista: %}
+                {{i}} <br>
+            {% endfor %}
+
+<form action="listar_pessoas"></form>
+<h1>Perfil</h1>
+<br>
+{%for pessoa in pessoa:%}
+   Nome: {{pessoa.nome}}<br>
+   Data de nascimento: {{pessoa.data_nasc}}<br>
+   Idade: {{pessoa.idade}}<br>
+   Tipo Sanguíneo: {{pessoa.tipo_sanguineo}}<br>
+   Peso: {{pessoa.peso}}<br>
+   Altura: {{pessoa.altura}}<br>
+   Senha: {{pessoa.senha}}<br>
+   Login: {{pessoa.login}}<br>
+   <hr>
+   <br>
+   <a href="/excluir_pessoa?id={{pessoa.id}}">Excluir</a>
+   <a href="/form_alterar_pessoa?id={{pessoa.id}}">Alterar</a>
+   
+   <hr>
+
+{%endfor%}
+  
+
+
+
+
+</body>
+</html>
