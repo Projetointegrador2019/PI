@@ -41,7 +41,7 @@ class Pessoa(Modelo):
     convulsao = CharField()
     medicamento = CharField()
     doenca = CharField()
-
+    batata = CharField()
 
 db.connect()
 db.create_tables([Pessoa])
