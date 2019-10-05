@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro de Informações</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script
+  	src="https://code.jquery.com/jquery-1.11.0.js"
+ 	integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+  	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+		.cor a {
+			text-decoration: none;
+			font-family: "Yu Gothic Light";
+			font-size: 18px;
+			color: black;
+			
+
+		}
+
+	
+		body{
+			 background-image:  url("fundo3.png");
+		}
+
+		.menu li{
+			margin: 0;
+			position: relative;
+			list-style-type: none;
+			display: inline;
+			bottom:100px;
+			left: 195px;		 
+		}
+
+		
+
+		
+</style>
+
+</head>
+<body>
+
+	<a href="index.html"><img class="posicao_imagem" src="gota6.png"></a>
+
+	<br> 
+	<br>
+	<br>
+	<br> 
+
+
+
+
+
+	<ul>
+		<div class="caixa">
+		<div class="cor">
+		<div class="menu"> 
+		<li><a href="/">Início</a></li>
+		<li><a href="/form_inserir_pessoas">Cadastro</a></li>
+		<li><a href="/form_login">Login</a></li>
+		<li><a href="/abrir_perfil">Perfil </a></li>
+		</div>
+		</div>
+		</div>
+	</ul>
+
+<div class="caixa">
+	<p>
+		A tecnologia é um instrumento que pode ser utilizado para salvar vidas de uma forma prática e rápida. Com esse questionário
+	você pode verificar a sua aptidão respondendo algumas perguntas e preenchendo alguns dados pessoais.<br>
+																				- A cada um bit, uma vida. </p>
+</div>
+
+
+<div class="espaçar">
+	 <br>
+	 <br>
+	 <br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+	<form action="/inserir" method="post" id="formulario">
+		
+	<fieldset>
+		<h2>Dados Pessoais </h2>
+							Nome: <input type="text" name="nome_completo" placeholder="Nome Completo" required value="1">
+							<br>
+							Idade: <input type="text" name="idade" placeholder="00" required  value="1">
+							<br>
+							CPF: <input type="text" name="cpf" placeholder="123.456.789-10" required  value="1">  
+							<br>
+							Data de Nascimento: <input type="text" name="data_nasc" placeholder="00/00/0000" required  value="1">
+							<br>
+							Peso: <input type="text" name="peso" placeholder="00" required  value="1">
+							<br>
+							Altura: <input type="text" name="altura" placeholder="0.00" required  value="1">
+							<br>
+							Tipo Sanguíneo: <input type="text" name="tipo_sanguineo" placeholder="AB+" required  value="1">
+							<br>
+		
+
+			<hr>
+
+			<h3>Dados para Registrar-se no Cada Bit Uma Vida</h3>
+			Login:<input type="text" name="login" placeholder="Login" required>
+			<br>
+			Senha:<input type="password" name="senha" required>
+			<br> 
+			<input type="button" name="next" class="next acao" value="Proximo"/>
+	</fieldset>
+
+	<fieldset>
+		<h2>Questionário </h2>
+
+		
+		<p>1.Você possui algum machucado ou ferida no corpo?</p>
+		<br>
+				
+				<label class="radio-inline">
+				<input type="radio" name="ferida" value="sim" required> <br> Sim  </label>
+				<label class="radio-inline">
+	    		<input type="radio" name="ferida" value="nao" required><br> Não </label>
+	    
+	    	
+	    	<br>
+	    	<br>
+	    	<br>
+		<p>2. Você comeu algum alimento gorduroso ou não nas 4 horas que antecedem o exame?</p>
+			<br>
+			 
+			 	<label class="radio-inline">
+				<input type="radio" name="alimento" value="sim" required> <br> Sim  </label>
+				<label class="radio-inline">
+			    <input type="radio" name="alimento" value="nao"><br> Não </label>
+			 
+			<br>
+			<br>
+			<br>
+		<p>3. Você ingeriu bebidas alcoólicas nas 12 horas que antecedem o exame?</p>
+			<br>
+			 	
+			 	<label class="radio-inline">
+				<input type="radio" name="bebidas" value="sim"required><br> Sim  </label>
+				<label class="radio-inline"> 
+			    <input  type="radio" name="bebidas" value="nao"><br>Não </label>
+			 
+			<br>
+			<br>
+			<br>
+				<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+				<input type="button" name="next" style="display:inline;" class="next acao" value="Proximo">
+			
+			
+		
+	</fieldset>
+
+
+	<fieldset>i
+		<h2>Questionário</h2>
+
+
+		<p>4. Você possuiu mais de um parceiro sexual nos 12 meses que antecedem o exame?</p>
+		<br>
+			<label class="radio-inline">
+			<input type="radio" name="parceiros" value="sim" required><br> Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="parceiros" value="nao"><br>Não</label>
+
+		    <br>
+		    <br>
+		    <br>
+		<p>5. Você repousou bem na noite que antecedeu o exame?</p>
+			<label class="radio-inline">
+			<input type="radio" name="repouso" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="repouso" value="nao"><br>Não </label>
+
+		    <br>
+		    <br>
+		    <br>
+		<p>6. Você usou algum tipo de droga ilícita nos últimos 12 meses que antecedem o
+		exame?</p>
+		<br>
+			<label class="radio-inline">
+			<input type="radio" name="droga" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="droga" value="nao"> <br>Não</label>
+		    <br>
+		    <br>
+		    <br>
+		<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+		<input type="button" name="next" style="display:inline;" class="next acao" value="Proximo">
+	</fieldset>
+
+
+	 <fieldset>
+		<h2>Questionário</h2>
+		
+
+		<p>7. Você é gestante ou ainda está no período de amamentação, tendo bebês menores
+		que 12 meses?</p>
+		    <br>
+		    <label class="radio-inline">
+			<input type="radio" name="gravidez" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+	    	<input type="radio" name="gravidez" value="nao"><br>Não</label>
+	    	<br>
+		    <br>
+		    <br>
+
+		<p>8. Você fez algum procedimento dentário nos últimos 30 dias? Especifique qual.</p>
+			<br>
+		    <label class="radio-inline">
+			<input type="radio" name="dente" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+	    	<input type="radio" name="dente" value="nao"><br>Não</label>
+	    	<br>
+		    <br>
+		    <br>
+		<p>9. Você recebeu alguma transfusão de sangue de pacientes que receberam sangue ou
+		que fazem hemodiálise no período de 1 ano?</p>
+			<br>
+			<label class="radio-inline">
+			<input type="radio" name="transfusao" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="transfusao" value="nao"><br>Não</label>
+		    <br>
+		    <br>
+		    <br>
+
+		<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+		<input type="button" name="next" style="display:inline;" class="next acao" value="Proximo">
+	</fieldset>
+
+
+	<fieldset>
+		<h2>Questionário </h2>
+		
+
+		<p>10. Você fez tatuagens, maquiagem definitiva, piercing ou micro pigmentação, no
+		período de 1 ano que antecede o exame?</p>
+			<br>
+			<label class="radio-inline">
+			<input type="radio" name="tatuagens" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="tatuagens" value="nao" required> <br>Não</label>
+		   <br>
+		   <br>
+		   <br>
+
+		<p>11. Você possui algum sintoma de gripe (tosse, dor de garganta, febre)?</p>
+			<br>
+			<label class="radio-inline">
+			<input type="radio" name="gripe" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="gripe" value="nao" required><br>Não</label>
+		   <br>
+		   <br>
+		   <br>
+		<p>12. Você passou por problemas intestinais, como diarreias nos 7 dias que antecedem o
+		exame?</p>
+			<br>
+			<label class="radio-inline">
+			<input type="radio" name="intestino" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="intestino" value="nao" required><br>Não</label>
+		  <br>
+		  <br>
+		  <br>
+
+		<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+		<input type="button" name="next" style="display:inline;" class="next acao" value="Proximo">
+	</fieldset>
+
+
+
+	<fieldset>
+		<h2>Questionário</h2>
+		<p>13. Você realizou parto normal ou aborto nos últimos 3 meses que antecedem o
+		exame?</p>
+		    <br>
+			<label class="radio-inline">
+			<input type="radio" name="parto" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="parto" value="nao"><br>Não</label>
+		  <br>
+		  <br>
+		  <br>
+		<p>14. Você passou por alguma cirurgia nos 12 meses que antecedem o exame?</p>
+		    <br>
+			<label class="radio-inline">
+			<input type="radio" name="cirurgia" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="cirurgia" value="nao"><br>Não</label>
+		  <br>
+		  <br>
+		  <br>
+		<p>15. Você tomou alguma vacina nas últimas 4 semanas que antecedem o exame?</p>
+			<br>
+			<label class="radio-inline">
+			<input type="radio" name="vacina" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="vacina" value="nao"><br>Não</label>
+		  <br>
+		  <br>
+		  <br>
+		<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+		<input type="button" name="next" style="display:inline;" class="next acao" value="Proximo">
+	</fieldset>
+
+
+		<fieldset>
+		<h2>Questionário</h2>
+		<p>16. Você teve uma convulsão os últimos 3 meses?</p>
+		 <br>
+			<label class="radio-inline">
+			<input type="radio" name="convulsao" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="convulsao" value="nao"><br>Não</label>
+		    <br>
+		    <br>
+		    <br>
+		<p>17. Você está ingerindo algum medicamento?</p>
+		 <br>
+			<label class="radio-inline">
+			<input type="radio" name="medicamento" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="medicamento" value="nao"><br>Não</label>
+		    <br>
+		    <br>
+		    <br>
+		<p>18. Você é portador de alguma doença? 
+			(Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto)
+		</p>
+		 <br>
+			<label class="radio-inline">
+			<input type="radio" name="doenca" value="sim" required><br>Sim</label>
+			<label class="radio-inline">
+		    <input type="radio" name="doenca" value="nao"><br>Não</label>
+		<br>
+		<br>
+		<br>
+
+		<input type="button" name="prev" style="display:inline;" class="prev acao" value="Anterior">
+		<input type="submit" class="acao" style="display:inline;" value="Enviar">
+		</fieldset>
+	
+	</form>
+
+
+	
+
+</body>
+</html>

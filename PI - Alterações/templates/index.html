@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inicial</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="shortcut icon" href="icone.ico" type="image/x-png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		
+
+
+		body {
+			background-color: #eeeeee;
+			width: 100%;
+		}
+
+		.posicao_imagem {
+			position: absolute;
+			top:  -28%;
+			left: -9%;
+		}
+
+		
+		.menu {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  margin: 0 auto;
+		  height: 100px;
+		  list-style: none;
+		}
+
+		.menu li {
+		  width: 125px;
+		  height: 50px;
+		  text-align: right;
+		  float: right;
+		  left:-15px;
+		 }
+		  
+
+		
+		h1{
+			font-family: "Candara;"
+		}
+
+		.p {
+			text-align: justify;
+			
+		}
+
+		.centro{
+			text-align: center;
+		}
+
+
+
+		.linha {
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+			-webkit-column-gap: 2%;
+			-moz-column-gap:2%;
+			column-gap: 2%;
+			-webkit-column-rule: 1px solid transparent;
+			-moz-column-rule: 1px solid transparent;
+			column-rule: 1px solid transparent;	
+			margin:20%;
+		}
+
+				
+		.secao {
+		clear: both;
+		margin: 5%;
+		padding: 0px;
+		}
+		
+		.coluna {
+		text-align: center;
+		display: block;
+		float:left;
+		margin: 1% 0 1% 5%;
+		}
+		.coluna:first-child { margin-left: 0 !important; }
+
+	
+		.row:before,
+		.row:after { content:""; display:table; }
+		.row:after { clear:both;}
+		.row { zoom:1;}
+
+		
+		.grid_1_of_4{ width: 21.25% }
+		.grid_2_of_4{ width: 47.5% }
+		.grid_3_of_4{ width: 73.75% }
+		.grid_4_of_4{ width: 100% }
+
+		.grid_1_of_3{ width: 30% }
+		.grid_2_of_3{ width: 65% }
+		.grid_3_of_3{ width: 100% }
+
+		
+		@media only screen and (max-width: 768px) {
+		.coluna {  margin: 1% 0 1% 0%; }
+		[class*='grid_'] { width: 100%; }
+		}
+
+		.texto_conteudo h4, h5{
+			text-align: center;
+			color: black;
+			margin: 5%;
+		}
+		
+		.carousel {
+			perspective: 50%;
+			
+		}
+
+		.carousel-item {
+			border: 4px solid black;
+			height: 5%;
+			
+		}
+
+		
+		
+
+	</style>
+</head>
+<body>
+	<a href="index.html"><img class="posicao_imagem" src="gota6.png"></a>
+
+		<ul class="menu">
+			<li><a href="/">Início</a></li>
+			<li><a href="/form_inserir_pessoas">Cadastre-se</a></li>
+			{% if session ["usuario"] %}
+			<li><a href="/abrir_perfil">Perfil</a></li>
+			{% endif %}
+			{% if session ["usuario"] %}
+			<li><a href=/logout>Sair</a></li>
+			{% else %}
+			<li><a href=/form_login>Fazer login</a></li>
+		 	{% endif %}
+		</ul>
+
+		{% for i in lista: %}
+			{{i}} <br>
+		{% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="centro"> 
+	<h1 style="font-family: Yu Gothic Light;">A CADA BIT UMA VIDA! </h1>
+	<br>
+	<p class="p centro"> Você sabia que se todas as pessoas que atendem os critérios para serem doadores de sangue no Brasil, doassem sangue duas </p>
+	<p class="p centro"> duas vezes ao ano de forma espontânea, nossos hemocentros jamais sofreriam com escasez de nenhum tipo sanguíneo?</p>
+	<p class="p centro">Com apenas 450 ml de sangue você pode se tornar o herói de várias vidas!</p>
+	<img src="oie.gif">
+</div>
+
+
+
+
+	<div class="secao">
+
+		<div class="coluna grid_1_of_4"> 
+			<h3>Beneficio1</h3>
+			<p>ldklsalkdlakal</p> 
+		</div>
+		
+		<div class="coluna grid_1_of_4">
+			<h3>Beneficio1</h3>
+			<p>ldklsalkdlakal</p> 
+		</div>
+		
+		<div class="coluna grid_1_of_4">
+			<h3>Beneficio1</h3>
+			<p>ldklsalkdlakal</p> 
+		</div>
+		
+		<div class="coluna grid_1_of_4">
+			<h3>Beneficio1</h3>
+			<p>ldklsalkdlakal</p> 
+		</div>
+
+	
+		<div class="secao">
+			<div class="coluna grid_1_of_3"> 
+				<img src="gota6.png">
+			</div>
+
+			<div class="coluna grid_1_of_3"> 
+				<img src="gota6.png">
+			</div>
+
+			<div class="coluna grid_1_of_3"> 
+					<img src="gota6.png">
+			</div>
+		</div>
+
+		
+		
+		
+		
+	</div>
+<br>
+<div class="carousel">
+		<div class="carousel-item texto_conteudo">
+			<h5>O projeto foi uma das melhores experiencias</h5>
+			<h5>______________</h5>
+			<h4>Ana</h4>
+			<br>
+		</div>
+
+		<div class="carousel-item texto_conteudo">
+			<h5>O projeto foi uma das melhores experiencias</h5>
+			<h5>______________</h5>
+			<h4>Maria</h4>
+			<br>
+		</div>
+
+		<div class="carousel-item texto_conteudo">
+			<h5>O projeto foi uma das melhores experiencias</h5>
+			<h5>_____________</h5>
+			<h4>Celma</h4>
+			<br>
+		</div>
+
+		<div class="carousel-item texto_conteudo">
+			<h5>O projeto foi uma das melhores experiencias</h5>
+			<h5>_____________</h5>
+			<h4>Amanda</h4>
+			<br>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+    		$('.carousel').carousel();
+  		});
+	</script>
+
+</body>
+</html>

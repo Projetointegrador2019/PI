@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario de Edicao de Dados</title>
+        <style> 
+
+body {
+			background-color: #eeeeee;
+			width: 100%;
+		}
+
+		.posicao_imagem {
+			position: absolute;
+			top:  -28%;
+			left: -9%;
+		}
+
+		
+		.menu {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  margin: 0 auto;
+		  height: 100px;
+		  list-style: none;
+		}
+
+		.menu li {
+		  width: 125px;
+		  height: 50px;
+		  text-align: right;
+		  float: right;
+		  left:-15px;
+		 }
+
+         .conteudo {
+			padding-bottom: 15px;
+			padding-top: 12px;
+			width:590px;
+			height: 300px;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 15px;
+		}
+
+		.conteudo img {
+			background-color: white;
+			width:190px; 
+			height:180px;
+			float: right;
+			margin-right: 55px;
+			margin-top: -260px;
+		}
+
+		.alterar {
+			position: absolute;
+	  		right:435px;
+	  		width: 45px;
+	  		height: 45px;
+	  		text-align: center;
+	  		border-radius: 50%;
+	  		background-color: red;
+	  		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
+	  		margin-top: -190px;
+		}
+
+		.excluir {
+			position: absolute;
+	  		right:465px;
+	  		width: 45px;
+	  		height: 45px;
+	  		text-align: center;
+	  		border-radius: 50%;
+	  		background-color: #1B9FA4;
+	  		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
+	  		margin-top: -240px;
+		}
+
+		.sair {
+			position: absolute;
+	  		right:450px;
+	  		width: 45px;
+	  		height: 45px;
+	  		text-align: center;
+	  		border-radius: 50%;
+	  		background-color: #C7DEDF;
+	  		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
+	  		margin-top: -130px;
+		}
+
+		p {
+			font-family: "Yu Gothic Light";
+			background-color: white;
+			margin-left: 35px;
+			
+        }
+        
+        .submit {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        background: #d4af7a;
+        text-transform: uppercase;
+        }
+
+
+
+
+
+</style>
+</head>
+<body>
+
+   
+
+        <ul class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/form_inserir_pessoas">Cadastre-se</a></li>
+                {% if session ["usuario"] %}
+                <li><a href="/abrir_perfil">Perfil</a></li>
+                {% endif %}
+                {% if session ["usuario"] %}
+                <li><a href=/logout>Sair</a></li>
+                {% else %}
+                <li><a href=/form_login>Fazer login</a></li>
+                 {% endif %}
+            </ul>
+    
+            {% for i in lista: %}
+                {{i}} <br>
+            {% endfor %}
+
+<div class="conteudo">
+        <form action="/alterar_pessoa" method="POST">
+                            <p>Nome: <input type="text" name="nome_completo" placeholder="Nome Completo" value="{{pessoa.nome}}"></p>
+                            <p>Idade: <input type="text" name="idade" placeholder="00" value="{{pessoa.idade}}"></p>
+                            <p>CPF: <input type="text" name="cpf" placeholder="123.456.789-10" value="{{pessoa.cpf}}"></p> 
+							
+                            <p>Data de Nascimento: <input type="text" name="data_nasc" placeholder="00/00/0000" value="{{pessoa.data_nasc}}"></p>
+							
+							<p>Peso: <input type="text" name="peso" placeholder="00" value="{{pessoa.peso}}"></p>
+							
+							<p>Altura: <input type="text" name="altura" placeholder="0.00" value="{{pessoa.altura}}"></p>
+							
+							<p>Tipo Sanguíneo: <input type="text" name="tipo_sanguineo" placeholder="AB+" value="{{pessoa.tipo_sanguineo}}"></p>
+			            
+                            
+
+                            <input type="hidden" name=id_original value="{{pessoa.id}}">
+                            <input type="submit" class="submit" value="Alterar">
+   
+   <br>
+   <img src="gf.png">
+   <div class="alterar">
+       <a href="#"></a>
+   </div>
+   <div class="excluir">
+       <a href="#"></a>
+   </div>
+   <div class="sair">
+       <a href="#"></a>
+   </div>
+</div>
+
+  
+
+
+
+
+
+                    <!--
+
+                        <p>1.Você possui algum machucado ou ferida no corpo?</p>
+                        <input type="radio" name="ferida" value="sim" required > Sim<br>
+                        <input type="radio" name="ferida" value="nao"> Não<br>
+
+                        <p>2. Você comeu algum alimento nas 4 horas que antecedem o exame? Se sim comeu algum alimento gorduroso ou relacionado a esses gêneros</p>
+                            <input type="radio" name="alimento" value="sim" required> Sim<br>
+                            <input type="radio" name="alimento" value="nao"> Não<br>
+
+                        <p>3. Você ingeriu bebidas alcoólicas nas 12 horas que antecedem o exame?</p>
+                            <input type="radio" name="bebidas" value="sim" required> Sim<br>
+                            <input type="radio" name="bebidas" value="nao"> Não<br>
+
+                        <p>4. Você possuiu mais de um parceiro sexual nos 12 meses que antecedem o exame?</p>
+                            <input type="radio" name="parceiros" value="sim" required> Sim<br>
+                            <input type="radio" name="parceiros" value="nao"> Não<br>
+
+                        <p>5. Você repousou bem na noite que antecedeu o exame?</p>
+                            <input type="radio" name="repouso" value="sim" required> Sim<br>
+                            <input type="radio" name="repouso" value="nao"> Não<br>
+
+                        <p>6. Você usou algum tipo de droga ilícita nos últimos 12 meses que antecedem o
+                        exame?</p>
+                            <input type="radio" name="droga" value="sim" required> Sim<br>
+                            <input type="radio" name="droga" value="nao"> Não<br>
+
+                        <p>7. Você é gestante ou ainda está no período de amamentação, tendo bebês menores
+                        que 12 meses?</p>
+                            <input type="radio" name="gravidez" value="sim" required> Sim<br>
+                            <input type="radio" name="gravidez" value="nao"> Não<br>
+
+                        <p>8. Você fez algum procedimento dentário nos últimos 30 dias? Especifique qual.</p>
+                            <input type="radio" name="dente" value="sim" required> Sim<br>
+                            <input type="radio" name="dente" value="nao"> Não<br>
+
+                        <p>9. Você recebeu alguma transfusão de sangue de pacientes que receberam sangue ou
+                        que fazem hemodiálise no período de 1 ano?</p>
+                            <input type="radio" name="transfusao" value="sim" required> Sim<br>
+                            <input type="radio" name="transfusao" value="nao"> Não<br>
+
+                        <p>10. Você fez tatuagens, maquiagem definitiva, piercing ou micro pigmentação, no
+                        período de 1 ano que antecede o exame?</p>
+                            <input type="radio" name="tatuagens" value="sim" required> Sim<br>
+                            <input type="radio" name="tatuagens" value="nao"> Não<br>
+
+                        <p>11. Você possui algum sintoma de gripe (tosse, dor de garganta, febre)?</p>
+                            <input type="radio" name="gripe" value="sim" required> Sim<br>
+                            <input type="radio" name="gripe" value="nao"> Não<br>
+
+                        <p>12. Você passou por problemas intestinais, como diarreias nos 7 dias que antecedem o
+                        exame?</p>
+                            <input type="radio" name="intestino" value="sim" required> Sim<br>
+                            <input type="radio" name="intestino" value="nao"> Não<br>
+
+                        <p>13. Você realizou parto normal ou aborto nos últimos 3 meses que antecedem o
+                        exame?</p>
+                            <input type="radio" name="parto" value="sim" required> Sim<br>
+                            <input type="radio" name="parto" value="nao"> Não<br>
+
+                        <p>14. Você passou por alguma cirurgia nos 12 meses que antecedem o exame?</p>
+                            <input type="radio" name="cirurgia" value="sim" required> Sim<br>
+                            <input type="radio" name="cirurgia" value="nao"> Não<br>	
+
+                        <p>15. Você tomou alguma vacina nas últimas 4 semanas que antecedem o exame?</p>
+                            <input type="radio" name="vacina" value="sim" required> Sim<br>
+                            <input type="radio" name="vacina" value="nao"> Não<br>
+
+                        <p>16. Você teve uma convulsão os últimos 3 meses?</p>
+                            <input type="radio" name="convulsao" value="sim" required> Sim<br>
+                            <input type="radio" name="convulsao" value="nao"> Não<br>
+
+                        <p>17. Você está ingerindo algum medicamento?</p>
+                            <input type="radio" name="medicamento" value="sim" required> Sim<br>
+                            <input type="radio" name="medicamento" value="nao"> Não<br>
+
+                        <p>18. Você é portador de alguma doença? 
+                            (Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto)
+                        </p>
+                            <input type="radio" name="doenca" value="sim" required> Sim<br>
+                            <input type="radio" name="doenca" value="nao"> Não<br>
+                 
+                        -->
+			
+        </form>
+      
+    </body>
+</html>
