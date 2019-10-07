@@ -150,8 +150,6 @@ def alterar_pessoa():
     quem.nome = request.form["nome_completo"]
     quem.idade = request.form["idade"]
     quem.tipo_sanguineo = request.form["tipo_sanguineo"]
-    quem.login = request.form["login"]
-    quem.senha = request.form["senha"]
     quem.cpf = request.form["cpf"]
     quem.data_nasc = request.form ["data_nasc"]
     quem.peso = request.form ["peso"]
