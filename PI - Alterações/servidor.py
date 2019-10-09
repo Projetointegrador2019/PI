@@ -70,66 +70,67 @@ def inserir():
     # executar uma série de verificações (If's) de possíveis inaptidões
     # (um monte de IFs a seguir)
 
+
     if request.form ["ferida"] == "sim":
-        motivos_inaptidao.append("Impossível realizar a doação enquanto houverem feridas abertas;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a feridas abertas")
     
     if request.form ["alimento"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a ingeestão de alimentos inadequados;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a ingestão de alimentos inadequados;")
     
     if request.form ["bebidas"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a ingestão de bebidas alcólicas;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a ingestão de bebidas alcólicas;")
 
     if request.form ["parceiros"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a existência de mais de um parceiro sexual no período de um ano;")
+        motivos_inaptidao.append("No momento você não pode  realizar a doação devido a existência de mais de um parceiro sexual no período de um ano;")
 
     if request.form ["repouso"]=="nao":
-        motivos_inaptidao.append("Impossível realizar a doação devido ao pouco repouso durante a noite anterior;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido ao pouco repouso durante a noite anterior;")
 
     if request.form ["droga"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido ao uso de drogas ílicita;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido ao uso de drogas ílicita;")
 
     if request.form ["gravidez"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a gravides ou período de amamentação;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a gravides ou período de amamentação;")
     
     if request.form  ["dente"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a prodecimentos dentários realizados nos últimos 30 dias;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a prodecimentos dentários realizados nos últimos 30 dias;")
 
     if request.form  ["transfusao"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido transfusão de sangue de pacientes que receberam sangue ou que fazem hemodiálise no período de 1 ano;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido transfusão de sangue de pacientes que receberam sangue ou que fazem hemodiálise no período de 1 ano;")
 
     if request.form ["tatuagens"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a tatuagens, maquiagem definitiva, piercing ou micro pigmentação, no período de 1 ano que antecede o exame;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a tatuagens, maquiagem definitiva, piercing ou micro pigmentação, no período de 1 ano que antecede o exame;")
     
     if request.form ["gripe"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a sintomas da gripe;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a sintomas da gripe;")
     
     if request.form ["intestino"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a problemas intestinais;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a problemas intestinais;")
     
     if request.form ["parto"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a parto normal ou aborto nos últimos 3 meses que antecedem o exame")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a parto normal ou aborto nos últimos 3 meses que antecedem o exame")
 
     if request.form ["cirurgia"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a realização de alguma cirurgia nos 12 meses que antecedem o exame")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a realização de alguma cirurgia nos 12 meses que antecedem o exame")
 
     if request.form ["vacina"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a vacinação recente;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a vacinação recente;")
     
     if request.form ["convulsao"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a convulsão;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a convulsão;")
 
     if request.form ["medicamento"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a ingestão de medicamentos;")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a ingestão de medicamentos;")
     
     if request.form ["doenca"]=="sim":
-        motivos_inaptidao.append("Impossível realizar a doação devido a Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto")
+        motivos_inaptidao.append("No momento você não pode realizar a doação devido a Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto")
 
     # se NÃO houver inaptidões (ou seja, se a pessoa estiver apta :-)
     if motivos_inaptidao==[]:
         return redirect("/listar_pessoas")
     
     # encaminha para a página inicial, mostrando motivos de inaptidão
-    return render_template("index.html", lista=motivos_inaptidao)
+    return render_template("motivos.html", lista=motivos_inaptidao)
 
 
 
