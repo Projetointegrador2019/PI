@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inicial</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		
+
+
+		body {
+			background-color: #eeeeee;
+			width: 100%;
+		}
+
+		.posicao_imagem {
+			position: absolute;
+			top:  -28%;
+			left: -9%;
+		}
+
+		
+		.menu {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  margin: 0 auto;
+		  height: 100px;
+		  list-style: none;
+		}
+
+		.menu li {
+		  width: 125px;
+		  height: 50px;
+		  text-align: right;
+		  float: right;
+		  left:-15px;
+		 }
+		  
+
+		
+		h1{
+			font-family: "Candara;"
+		}
+
+		.p {
+			text-align: justify;
+			
+		}
+
+		.centro{
+			text-align: center;
+		}
+
+
+
+		.linha{
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+			-webkit-column-gap: 37px;
+			-moz-column-gap: 37px;
+			column-gap: 37px;
+			-webkit-column-rule: 1px solid transparent;
+			-moz-column-rule: 1px solid transparent;
+			column-rule: 1px solid transparent;	
+			margin-left: 30%;
+			margin-right: 30%;
+		}
+
+		
+		
+
+	</style>
+</head>
+<body>
+	<a href="index.html"><img class="posicao_imagem" src="gota6.png"></a>
+
+		<ul class="menu">
+			<li><a href="/">Início</a></li>
+			<li><a href="/form_inserir_pessoas">Cadastre-se</a></li>
+			{% if session ["usuario"] %}
+			<li><a href="/abrir_perfil">Perfil</a></li>
+			{% endif %}
+			{% if session ["usuario"] %}
+			<li><a href=/logout>Sair</a></li>
+			{% else %}
+			<li><a href=/form_login>Fazer login</a></li>
+		 	{% endif %}
+		</ul>
+
+		{% for i in lista: %}
+			{{i}} <br>
+		{% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="centro"> 
+	<h1 style="font-family: Yu Gothic Light;">A CADA BIT UMA VIDA! </h1>
+	<br>
+	<p class="p centro"> Você sabia que se todas as pessoas que atendem os critérios para serem doadores de sangue no Brasil, doassem sangue duas </p>
+	<p class="p centro"> duas vezes ao ano de forma espontânea, nossos hemocentros jamais sofreriam com escasez de nenhum tipo sanguíneo?</p>
+	<p class="p centro">Com apenas 450 ml de sangue você pode se tornar o herói de várias vidas!</p>
+	<img style="margin:10%;" src="tenorzinho.gif">
+</div>
+
+<h2>Benefícios de Doar Sangue!</h2>
+<br>
+<br>
+<div class="linha">
+
+<h3>Beneficio1</h3>
+<p>ldklsalkdlakal</p>
+
+<h3>Beneficio3</h3>
+<p>ldklsalkdlakal</p>
+
+<h3>Beneficio3</h3>
+<p>ldklsalkdlakal</p>
+
+<h3>Beneficio2</h3>
+<p >ldklsalkdlakal</p>
+</div>
+
+</body>
+</html>

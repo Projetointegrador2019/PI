@@ -35,7 +35,7 @@ def inserir():
     
         
     # cria uma pessoa com os parâmetros recebidos
-    Pessoa.create(nome=request.form["nome_completo"], 
+    novo = Pessoa.create(nome=request.form["nome_completo"], 
     idade=request.form["idade"], 
     tipo_sanguineo=request.form["tipo_sanguineo"], 
     login=request.form["login"], 
@@ -61,7 +61,8 @@ def inserir():
     vacina=request.form ["vacina"], 
     convulsao=request.form ["convulsao"], 
     medicamento=request.form ["medicamento"],
-    doenca=request.form ["doenca"])
+    doenca=request.form ["doenca"],
+    apto="")
 
     # inicializa possível conjunto de inaptidões
     motivos_inaptidao=[]
@@ -125,10 +126,15 @@ def inserir():
     if request.form ["doenca"]=="sim":
         motivos_inaptidao.append("No momento você não pode realizar a doação devido a Hepatite (após 11 anos de idade),Câncer, AIDS, Doenças autoimunes, Problemas cardíacos, Diabetes, Doença de Chagas ou Hipertireoidismo, tireoidite de Hashimoto")
 
+    
+
     # se NÃO houver inaptidões (ou seja, se a pessoa estiver apta :-)
     if motivos_inaptidao==[]:
-        return redirect("/listar_pessoas")
+        novo.apto ="sim"
+        return redirect("/")
     
+    
+
     # encaminha para a página inicial, mostrando motivos de inaptidão
     return render_template("motivos.html", lista=motivos_inaptidao)
 

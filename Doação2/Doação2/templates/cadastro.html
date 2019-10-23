@@ -17,9 +17,6 @@
 <style type="text/css">
 
 		.cor a {
-			position: relative;
-			margin: 10%;
-			text-align: center;
 			text-decoration: none;
 			font-family: "Yu Gothic Light";
 			font-size: 18px;
@@ -28,47 +25,19 @@
 
 		}
 
-		.caixa p {
-			text-align:center;
-			margin:10%;
-			width: 65%;
-			height: 90%;
-			font-size: 18px;
-			font-weight: bold;
-			color: #000000;
-			padding: 50px;
-			border: 2px solid 	#000000;
-			margin: 0 auto}
-
-
 	
 		body{
-			 background-image:  url("fundo3.png");
+			 background-image:  url("fundo.png");
 		}
 
-
-		.menu {
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  margin: 0 auto;
-		  height: 100px;
-		  list-style: none;
+		.menu li{
+			margin: 0;
+			position: relative;
+			list-style-type: none;
+			display: inline;
+			bottom:100px;
+			left: 195px;		 
 		}
-
-		.menu li a {
-		  position: relative;
-		  width: 125px;
-		  height: 50px;
-		  text-align: right;
-		  float: right;
-		  left:-15px;
-		  font-size: 18px;
-		  text-decoration: none;
-		  color: black;
-		  bottom: 150%;
-		  
-		 }
 
 		
 
@@ -90,22 +59,13 @@
 
 
 	<ul>
-			<ul class="menu">
-				<li><a href="/">Início</a></li>
-				<li><a href="/form_inserir_pessoas">Cadastre-se</a></li>
-				{% if session ["usuario"] %}
-				<li><a href="/abrir_perfil">Perfil</a></li>
-				{% endif %}
-				{% if session ["usuario"] %}
-				<li><a href=/logout>Sair</a></li>
-				{% else %}
-
-
-				
-				<li><a href=/form_login>Fazer login</a></li>
-				 {% endif %}
-			</ul>
-	
+		<div class="caixa">
+		<div class="cor">
+		<div class="menu"> 
+		<li><a href="/">Início</a></li>
+		<li><a href="/form_inserir_pessoas">Cadastro</a></li>
+		<li><a href="/form_login">Login</a></li>
+		<li><a href="/abrir_perfil">Perfil </a></li>
 		</div>
 		</div>
 		</div>
@@ -140,19 +100,19 @@
 		
 	<fieldset>
 		<h2>Dados Pessoais </h2>
-							Nome: <input type="text" name="nome_completo" placeholder="Nome Completo" required >
+							Nome: <input type="text" name="nome_completo" placeholder="Nome Completo" required value="1">
 							<br>
-							Idade: <input type="text" name="idade" placeholder="00" required  >
+							Idade: <input type="text" name="idade" placeholder="00" required  value="1">
 							<br>
-							CPF: <input type="text" name="cpf" placeholder="123.456.789-10" required >  
+							CPF: <input type="text" name="cpf" placeholder="123.456.789-10" required  value="1">  
 							<br>
-							Data de Nascimento: <input type="text" name="data_nasc" placeholder="00/00/0000" required >
+							Data de Nascimento: <input type="text" name="data_nasc" placeholder="00/00/0000" required  value="1">
 							<br>
-							Peso: <input type="text" name="peso" placeholder="00" required>
+							Peso: <input type="text" name="peso" placeholder="00" required  value="1">
 							<br>
-							Altura: <input type="text" name="altura" placeholder="0.00" required>
+							Altura: <input type="text" name="altura" placeholder="0.00" required  value="1">
 							<br>
-							Tipo Sanguíneo: <input type="text" name="tipo_sanguineo" placeholder="AB+" required>
+							Tipo Sanguíneo: <input type="text" name="tipo_sanguineo" placeholder="AB+" required  value="1">
 							<br>
 		
 
