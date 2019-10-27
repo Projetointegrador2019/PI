@@ -2,7 +2,19 @@ from flask import Flask, redirect, render_template, request, session
 from peewee import *
 
 from classe import *
-from verificar import *
+
+global motivos_inaptidao
+
+motivos_inaptidao=[]
+
+aptidao1="sim"
+aptidao2="nao"
+aptidao_final=""
+if motivos_inaptidao==[]:
+    aptidao_final=aptidao1
+else:
+    aptidao_final=aptidao2
+
 
 app= Flask(__name__, static_url_path="", static_folder="templates")
 
@@ -35,7 +47,7 @@ def inserir():
     
         
     # cria uma pessoa com os parâmetros recebidos
-    novo = Pessoa.create(nome=request.form["nome_completo"], 
+    Pessoa.create(nome=request.form["nome_completo"], 
     idade=request.form["idade"], 
     tipo_sanguineo=request.form["tipo_sanguineo"], 
     login=request.form["login"], 
@@ -62,7 +74,7 @@ def inserir():
     convulsao=request.form ["convulsao"], 
     medicamento=request.form ["medicamento"],
     doenca=request.form ["doenca"],
-    apto="")
+    apto= aptidao_final)
 
     # inicializa possível conjunto de inaptidões
     motivos_inaptidao=[]
@@ -130,7 +142,7 @@ def inserir():
 
     # se NÃO houver inaptidões (ou seja, se a pessoa estiver apta :-)
     if motivos_inaptidao==[]:
-        novo.apto ="sim"
+        Pessoa.apto=aptidao_final
         return redirect("/")
     
     

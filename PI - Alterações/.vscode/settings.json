@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/bin/python3"
+    "python.pythonPath": "C:\\Users\\User\\python.exe",
+    "python.unitTest.pyTestArgs": [
+        "__pycache__"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": true
 }

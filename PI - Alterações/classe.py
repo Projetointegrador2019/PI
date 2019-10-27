@@ -2,7 +2,7 @@ from peewee import *
 
 
 
-db=SqliteDatabase("doacao_sangue4.db")
+db=SqliteDatabase("doacao_sangue5.db")
 
 
 class Modelo(Model):
@@ -41,7 +41,7 @@ class Pessoa(Modelo):
     convulsao = CharField()
     medicamento = CharField()
     doenca = CharField()
-    apto=CharField()
+    apto=CharField(default="nao")
 
 
 db.connect()
